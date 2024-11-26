@@ -1,7 +1,7 @@
 version: v2.0
 provider: cloudflare
 routes:
-  - pathPrefix: /LCY
+  - pathPrefix: /lcy
     name: ssrlcy
     type: function
     directory: .
@@ -12,7 +12,7 @@ routes:
         filename: _worker.js
         staticDirectory: ssr-assets
     shield: LondonCity
-  - pathPrefix: /LHR
+  - pathPrefix: /lhr
     name: ssrlhr
     type: function
     directory: .
@@ -23,7 +23,7 @@ routes:
         filename: _worker.js
         staticDirectory: ssr-assets
     shield: London
-  - pathPrefix: /MAN
+  - pathPrefix: /man
     name: ssrman
     type: function
     directory: .
@@ -34,7 +34,7 @@ routes:
         filename: _worker.js
         staticDirectory: ssr-assets  
     shield: Manchester
-  - pathPrefix: /FRA
+  - pathPrefix: /fra
     name: ssrfra
     type: function
     directory: .
