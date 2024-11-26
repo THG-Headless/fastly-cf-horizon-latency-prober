@@ -1,0 +1,52 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<meta name="color-scheme" content="dark light" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+:root{
+	--primary-colour: black;
+	--secondary-colour: white;
+	--card-bg:white;
+	--card-border:2px solid black;
+	--box-bg:#f0f0f0;
+	--code-bg:rgb(227, 227, 227);
+	--code-border:rgb(217, 217, 217);
+	font-family: 'Inter', sans-serif;
+}
+@media screen and (prefers-color-scheme: dark){
+	:root{
+		--primary-colour: white;
+		--secondary-colour: black;
+		--card-bg:#181818;
+		--box-bg: #181818;
+		--code-bg:rgb(69, 69, 69);
+		--code-border:rgb(69, 69, 69);
+
+	}
+}
+code {
+	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+}
+</style>

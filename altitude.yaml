@@ -1,0 +1,18 @@
+version: v2.0
+provider: cloudflare
+routes:
+  - pathPrefix: /
+    name: ssr
+    type: function
+    directory: .
+    build:
+      command: build
+      output:
+        directory: dist
+        filename: _worker.js
+        staticDirectory: ssr-assets
+  - pathPrefix: favicon.svg
+    name: favicon
+    type: static
+    directory: public
+    filename: favicon.svg
