@@ -2,7 +2,7 @@ version: v2.0
 provider: cloudflare
 routes:
   - pathPrefix: /LCY
-    name: ssr
+    name: ssrlcy
     type: function
     directory: .
     build:
@@ -13,7 +13,7 @@ routes:
         staticDirectory: ssr-assets
     shield: LondonCity
   - pathPrefix: /LHR
-    name: ssr
+    name: ssrlhr
     type: function
     directory: .
     build:
@@ -24,7 +24,7 @@ routes:
         staticDirectory: ssr-assets
     shield: London
   - pathPrefix: /MAN
-    name: ssr
+    name: ssrman
     type: function
     directory: .
     build:
@@ -35,7 +35,7 @@ routes:
         staticDirectory: ssr-assets  
     shield: Manchester
   - pathPrefix: /FRA
-    name: ssr
+    name: ssrfra
     type: function
     directory: .
     build:
