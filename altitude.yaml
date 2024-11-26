@@ -1,7 +1,7 @@
 version: v2.0
 provider: cloudflare
 routes:
-  - pathPrefix: /
+  - pathPrefix: /LCY
     name: ssr
     type: function
     directory: .
@@ -11,6 +11,40 @@ routes:
         directory: dist
         filename: _worker.js
         staticDirectory: ssr-assets
+    shield: LondonCity
+  - pathPrefix: /LHR
+    name: ssr
+    type: function
+    directory: .
+    build:
+      command: build
+      output:
+        directory: dist
+        filename: _worker.js
+        staticDirectory: ssr-assets
+    shield: London
+  - pathPrefix: /MAN
+    name: ssr
+    type: function
+    directory: .
+    build:
+      command: build
+      output:
+        directory: dist
+        filename: _worker.js
+        staticDirectory: ssr-assets  
+    shield: Manchester
+  - pathPrefix: /FRA
+    name: ssr
+    type: function
+    directory: .
+    build:
+      command: build
+      output:
+        directory: dist
+        filename: _worker.js
+        staticDirectory: ssr-assets
+    shield: Frankfurt
   - pathPrefix: favicon.svg
     name: favicon
     type: static
