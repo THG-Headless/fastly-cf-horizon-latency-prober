@@ -45,6 +45,17 @@ routes:
         filename: _worker.js
         staticDirectory: ssr-assets
     shield: Frankfurt
+  - pathPrefix: /nyc
+    name: ssrnyc
+    type: function
+    directory: .
+    build:
+      command: build
+      output:
+        directory: dist
+        filename: _worker.js
+        staticDirectory: ssr-assets
+    shield: New York City
   - pathPrefix: favicon.svg
     name: favicon
     type: static
