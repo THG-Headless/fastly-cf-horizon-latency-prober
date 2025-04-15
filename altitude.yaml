@@ -61,6 +61,7 @@ routes:
     type: static
     directory: public
     filename: favicon.svg
+vclSnippets:
   - name: bypass_waf
     content: |
       if (querystring.get(req.url, "bypass_waf") == "dfsfD435L") {
