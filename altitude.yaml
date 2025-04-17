@@ -72,10 +72,10 @@ vclSnippets:
   - name: waf_headers_on_resp
     content: |
       if (fastly.ff.visits_this_service == 0) {
-        set resp.http.x-sigsci-agentresponse = req.http.x-sigsci-agentresponse;
-        set resp.http.x-sigsci-decision-ms = req.http.x-sigsci-decision-ms;
-        set resp.http.x-sigsci-tags = req.http.x-sigsci-tags;
-        set resp.http.x-sigsci-reqid = req.http.x-fastly-ngwaf:requestid;
+        set resp.http.x-waf-agentresponse = resp.http.x-sigsci-agentresponse;
+        set resp.http.x-waf-decision-ms = resp.http.x-sigsci-decision-ms;
+        set resp.http.x-waf-tags = resp.http.x-sigsci-tags;
+        set resp.http.x-waf-reqid = req.http.x-fastly-ngwaf:requestid;
       }
     type: deliver
     priority: 100
